@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+/* The answer */
 func twoSum(nums []int, target int) []int {
 	valueToIndex := make(map[int]int)
 	length := len(nums)
