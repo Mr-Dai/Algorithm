@@ -31,25 +31,25 @@ public abstract class SortTest {
 
     @Test
     public void testOnAscendingArray() {
-        Integer[] array = generateAscendingArray(1000);
+        Integer[] array = generateAscendingArray(100);
         sort.sort(array);
-        assertThat(array.length, is(1000));
+        assertThat(array.length, is(100));
         assertSorted(array);
     }
 
     @Test
     public void testOnDescendingArray() {
-        Integer[] array = generateDescendingArray(1000);
+        Integer[] array = generateDescendingArray(100);
         sort.sort(array);
-        assertThat(array.length, is(1000));
+        assertThat(array.length, is(100));
         assertSorted(array);
     }
 
     @Test
     public void testOnRandomizedArray() {
-        Integer[] array = generateRandomized(1000);
+        Integer[] array = generateRandomized(10);
         sort.sort(array);
-        assertThat(array.length, is(1000));
+        assertThat(array.length, is(10));
         assertSorted(array);
     }
 
