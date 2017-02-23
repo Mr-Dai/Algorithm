@@ -3,7 +3,8 @@ package com.mrdai.algorithm.string;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  * Test cases for {@link KnuthMorrisPratt}.
@@ -27,7 +28,7 @@ public class KnuthMorrisPrattTest {
         results = KnuthMorrisPratt.search("ABC PARTICIPATE IN PARACHUTE B PARTICIPATE IN PARACHUTE", "PARTICIPATE IN PARACHUTE");
         assertArrayEquals(new int[]{ 4, 31 }, results);
     }
-    
+
     @Test
     public void testOnNoMatchForMultipleCharTarget() {
         int[] results = KnuthMorrisPratt.search("abcdef", "zfc");
