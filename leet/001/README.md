@@ -74,3 +74,14 @@ func twoSum(nums []int, target int) []int {
 ```
 
 And the time complexity reduces from O(n^2) to O(n).
+
+## Submission Run Time
+
+|  | n | n^2 |
+| --- | ---: | ---: |
+| Java | 9 ms | 64 ms |
+| Go | 13 ms | 59 ms |
+| JavaScript | 95 ms | 198 ms |
+| Python | 406 ms | TLE |
+
+Shame on you, Python!
