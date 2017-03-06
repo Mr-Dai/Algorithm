@@ -19,7 +19,9 @@ public class KnuthMorrisPrattTest {
 
     @Test
     public void testOnMultipleCharTarget() {
-        int[] results = KnuthMorrisPratt.search("abcbabcbabcbb", "abc");
+        int[] results = KnuthMorrisPratt.search("ababababcababababca", "ababababca");
+        assertArrayEquals(new int[]{ 0, 9 }, results);
+        results = KnuthMorrisPratt.search("abcbabcbabcbb", "abc");
         assertArrayEquals(new int[]{ 0, 4, 8 }, results);
         results = KnuthMorrisPratt.search("ABC ABCDAB ABCDABCDABDE", "ABCDABD");
         assertArrayEquals(new int[]{ 15 }, results);
@@ -27,6 +29,8 @@ public class KnuthMorrisPrattTest {
         assertArrayEquals(new int[]{ 0, 15, 30 }, results);
         results = KnuthMorrisPratt.search("ABC PARTICIPATE IN PARACHUTE B PARTICIPATE IN PARACHUTE", "PARTICIPATE IN PARACHUTE");
         assertArrayEquals(new int[]{ 4, 31 }, results);
+        results = KnuthMorrisPratt.search("AAAAA", "AA");
+        assertArrayEquals(new int[]{ 0, 1, 2, 3 }, results);
     }
 
     @Test

@@ -32,7 +32,7 @@ public abstract class KnuthMorrisPratt {
             }
             if (j == word.length) { // Full match is found
                 results.add(i);
-                i += word.length;
+                i += j - backtrack[word.length - 1] - 1;
             }
         }
 
@@ -58,13 +58,11 @@ public abstract class KnuthMorrisPratt {
     private static int[] computeBacktrack(char[] word) {
         int[] result = new int[word.length];
         result[0] = -1;
+        int k = 0; // the zero-based index in W of the next character of the current candidate substring
         for (int i = 2; i < word.length; i++) {
-            if (result[i - 1] != 0 && word[i - 1] == word[result[i - 1]])
-                result[i] = result[i - 1] + 1;
-            else if (word[i] == word[1])
-                result[i] = 1;
-            else
-                result[i] = 0;
+            while (k > 0 && word[k] != word[i - 1]) k = result[k];
+            if (word[k] == word[i - 1]) k++;
+            result[i] = k;
         }
         return result;
     }
